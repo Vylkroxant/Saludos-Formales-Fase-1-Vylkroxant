@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>Vylkroxant 2021–2026 — Saluditos en Inglés Australiano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="texture" aria-hidden="true"></div>
+<header>
+<div class="nav">
+<div class="brand" aria-label="Marca">
+<div class="logo" aria-hidden="true"></div>
+<div>
+<h1>Vylkroxant 2021–2026</h1>
+<p>Saludos formales e informales — Inglés australiano</p>
+</div>
+</div>
+<div class="top-actions">
+<div class="chip" title="Propiedad del sitio">
+<span class="dot" aria-hidden="true"></span>
+<span>Propiedad: <b>Técnico Angel Manuel Guevara Chavarría</b></span>
+</div>
+<button class="btn btn-ghost" id="btnVoiceTest" type="button" aria-describedby="voiceHelp">
+<span aria-hidden="true">🔊</span> Probar voz (mujer)
+</button>
+<button class="btn btn-primary" id="btnStart" type="button">
+<span aria-hidden="true">▶</span> Empezar
+</button>
+</div>
+</div>
+</header>
+<main class="wrap">
+<section class="hero reveal">
+<div class="heroPanel">
+<h2>Aprende a saludar como en Australia</h2>
+<p>
+Aquí aprenderás <strong>saludos formales</strong> y <strong>saludos informales</strong> en inglés australiano,
+con pronunciación por voz<strong></strong>.
+Para avanzar, debes completar <strong>10 juegos</strong> por sección.
+</p>
+<div class="heroActions">
+<button class="btn btn-primary" id="btnGoFormal" type="button">
+<span aria-hidden="true">🧭</span> Ir a Formales
+</button>
+<button class="btn btn-ghost" id="btnHow" type="button">
+<span aria-hidden="true">❓</span> ¿Cómo se juega?
+</button>
+<span id="voiceHelp" class="sr-only">
+La voz depende de tu dispositivo. Esta página intentará usar una voz femenina en inglés australiano si está disponible.
+</span>
+</div>
+</div>
+<aside class="sidePanel" aria-label="Progreso general">
+<div class="badgeRow">
+<span class="miniBadge formal">Sección 1: Formales</span>
+<span class="miniBadge informal">Sección 2: Informales</span>
+<span class="miniBadge">Total: 20 juegos</span>
+</div>
+<div class="progressBox">
+<h3>Tu progreso</h3>
+<div class="meter" aria-label="Progreso total">
+<i id="totalMeter" style="width:0%"></i>
+</div>
+<div class="progressMeta">
+<span id="progressText">0 / 20</span>
+<span id="sectionStatus">Empieza en Formales</span>
+</div>
+</div>
+<div class="progressBox" aria-label="Consejo">
+<h3>Tip para pronunciar</h3>
+<div style="display:flex; gap:10px; align-items:flex-start;">
+<div aria-hidden="true" style="width:38px;height:38px;border-radius:14px;background:linear-gradient(135deg, rgba(255,183,3,.9), rgba(85,214,178,.7));border:1px solid rgba(31,36,48,.12);box-shadow:0 10px 18px rgba(31,36,48,.08);"></div>
+<div style="color:rgba(31,36,48,.78); font-weight:800; line-height:1.45;">
+Pulsa <strong>Escuchar</strong> para oír el saludo. Luego elige la opción correcta.
+Si tu dispositivo no tiene voz “en-AU”, se usará otra voz en inglés.
+</div>
+</div>
+</div>
+</aside>
+</section>
+<section class="section reveal" id="formalSection" aria-label="Sección de saludos formales">
+<div class="sectionHead">
+<div class="sectionTitle">
+<div class="tag formal" aria-hidden="true"></div>
+<div>
+<h3>Sección 1 — Saludos formales</h3>
+<p>
+Saludos para la escuela, entrevistas, hablar con adultos, o cuando quieres ser muy respetuoso.
+Completa <strong>10 juegos</strong> para desbloquear los informales.
+</p>
+</div>
+</div>
+<div class="lock" id="formalLock" aria-live="polite">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M6.5 11h11A2.5 2.5 0 0 1 20 13.5v6A2.5 2.5 0 0 1 17.5 22h-11A2.5 2.5 0 0 1 4 19.5v-6A2.5 2.5 0 0 1 6.5 11Z" stroke="currentColor" stroke-width="2"/>
+</svg>
+<span><strong id="formalProgressText">0</strong>/10 completados</span>
+</div>
+</div>
+<div class="sectionBody">
+<div class="gameStage" aria-label="Juego de la sección formal">
+<div class="stageTop">
+<div class="stageTitle">
+<div class="kicker"><span class="pill" aria-hidden="true"></span> Juego <span id="formalGameIndex">1</span> de 10</div>
+<h4 id="formalPromptTitle">Escucha y elige el saludo formal</h4>
+<p id="formalPromptDesc">Pulsa “Escuchar” y selecciona el texto que coincide con la pronunciación.</p>
+</div>
+<div class="stageActions">
+<button class="btn speakBtn" id="formalSpeak" type="button" title="Escuchar pronunciación">
+<span aria-hidden="true">🔊</span> <strong>Escuchar</strong>
+</button>
+<button class="btn btn-ghost" id="formalRepeatSlow" type="button" title="Escuchar más lento">
+<span aria-hidden="true">🐢</span> Lento
+</button>
+<button class="btn btn-ghost" id="formalSkip" type="button" title="Saltar (no suma puntos)">
+<span aria-hidden="true">⏭</span> Cambiar
+</button>
+</div>
+</div>
+<div class="choices" id="formalChoices" role="group" aria-label="Opciones de respuesta"></div>
+<div class="resultLine" aria-live="polite">
+<div>
+<div class="msg" id="formalMsg">Listo para jugar.</div>
+<div class="hint" id="formalHint">Consejo: primero escucha, luego lee.</div>
+</div>
+<div style="display:flex; gap:8px; align-items:center;">
+<span class="chip" title="Puntos de la sección"><span class="dot" aria-hidden="true" style="background:var(--formal-2); box-shadow:0 0 0 3px rgba(8,160,181,.18)"></span> <span>Puntos: <b id="formalScore">0</b></span></span>
+</div>
+</div>
+</div>
+<aside class="lessonStrip" aria-label="Frases formales">
+<h4>Frases formales (AUS)</h4>
+<ul class="phraseList" id="formalPhraseList"></ul>
+<div style="margin-top:12px; color:rgba(31,36,48,.74); font-weight:800; line-height:1.45;">
+Nota: En Australia se usan estas frases igual que en otros países de habla inglesa, con acento australiano.
+</div>
+</aside>
+</div>
+</section>
+<section class="section reveal" id="informalSection" aria-label="Sección de saludos informales">
+<div class="sectionHead">
+<div class="sectionTitle">
+<div class="tag informal" aria-hidden="true"></div>
+<div>
+<h3>Sección 2 — Saludos informales</h3>
+<p>
+Saludos con amigos, familia, o cuando quieres sonar relajado como en Australia.
+Para entrar aquí, primero completa Formales.
+</p>
+</div>
+</div>
+<div class="lock" id="informalLock" aria-live="polite">
+<svg id="informalLockIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M6.5 11h11A2.5 2.5 0 0 1 20 13.5v6A2.5 2.5 0 0 1 17.5 22h-11A2.5 2.5 0 0 1 4 19.5v-6A2.5 2.5 0 0 1 6.5 11Z" stroke="currentColor" stroke-width="2"/>
+</svg>
+<span id="informalStatus"><strong>Bloqueado</strong> — completa Formales</span>
+</div>
+</div>
+<div class="sectionBody">
+<div class="gameStage" aria-label="Juego de la sección informal" id="informalStage">
+<div class="stageTop">
+<div class="stageTitle">
+<div class="kicker"><span class="pill" aria-hidden="true" style="background:var(--informal-2); box-shadow:0 0 0 4px rgba(255,74,162,.18)"></span> Juego <span id="informalGameIndex">1</span> de 10</div>
+<h4 id="informalPromptTitle">Escucha y elige el saludo informal</h4>
+<p id="informalPromptDesc">Cuando se desbloquee, pulsa “Escuchar” y elige la frase.</p>
+</div>
+<div class="stageActions">
+<button class="btn speakBtn" id="informalSpeak" type="button" disabled>
+<span aria-hidden="true">🔊</span> <strong>Escuchar</strong>
+</button>
+<button class="btn btn-ghost" id="informalRepeatSlow" type="button" disabled>
+<span aria-hidden="true">🐢</span> Lento
+</button>
+<button class="btn btn-ghost" id="informalSkip" type="button" disabled>
+<span aria-hidden="true">⏭</span> Cambiar
+</button>
+</div>
+</div>
+<div class="choices" id="informalChoices" role="group" aria-label="Opciones de respuesta"></div>
+<div class="resultLine" aria-live="polite">
+<div>
+<div class="msg" id="informalMsg">Completa primero Formales para desbloquear.</div>
+<div class="hint" id="informalHint">Cuando se desbloquee, aquí aparecerán tus juegos.</div>
+</div>
+<div style="display:flex; gap:8px; align-items:center;">
+<span class="chip" title="Puntos de la sección"><span class="dot" aria-hidden="true" style="background:var(--informal-2); box-shadow:0 0 0 3px rgba(255,74,162,.18)"></span> <span>Puntos: <b id="informalScore">0</b></span></span>
+</div>
+</div>
+</div>
+<aside class="lessonStrip" aria-label="Frases informales">
+<h4>Frases informales (AUS)</h4>
+<ul class="phraseList" id="informalPhraseList"></ul>
+<div style="margin-top:12px; color:rgba(31,36,48,.74); font-weight:800; line-height:1.45;">
+Nota: “G’day” y “How ya going?” son muy típicas en Australia (depende del contexto).
+</div>
+</aside>
+</div>
+</section>
+<section class="finale reveal" id="finale" aria-label="Final del juego">
+<h3>¡Misión cumplida! Aprendiste saludos formales e informales</h3>
+<p>
+Completaste las dos secciones (20 juegos). Si quieres, puedes reiniciar y volver a practicar.
+</p>
+<div class="finaleActions">
+<button class="btn btn-danger" id="btnReset" type="button">
+<span aria-hidden="true">↻</span> Reiniciar todo
+</button>
+<button class="btn btn-primary" id="btnCelebrateSpeak" type="button">
+<span aria-hidden="true">🔊</span> Escuchar felicitación
+</button>
+</div>
+</section>
+</main>
+<footer>
+<div class="fine">
+<div style="text-align: center;"><strong>Vylkroxant 2021–2026</strong> — Propietario y Creador <strong>Técnico Angel Manuel Guevara Chavarría</strong>.</div>
+<div style="text-align: center;">
+Nuestro Hogar Educativo es Tu Hogar de Aprendizaje
+</div>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
